@@ -229,7 +229,7 @@ export default function SmoothScroll() {
         </section>
 
         {/* Fade In Section */}
-        <section className="pt-36">
+        <section className="">
           <TrustedIndustries />
         </section>
 

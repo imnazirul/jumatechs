@@ -218,7 +218,7 @@ export default function AwesomeLoader({
       </div>
 
       <div ref={orbitRef} className="absolute inset-0  flex items-center justify-center">
-        {[...Array(3)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <div
             key={i}
             className="absolute  w-2 h-2 bg-blue-400 rounded-full shadow-lg"
