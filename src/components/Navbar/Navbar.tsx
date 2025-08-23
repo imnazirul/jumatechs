@@ -249,7 +249,7 @@ export default function Navbar() {
                   </Link>
                 </div>
 
-                <div className="size-9 bg-[#E1E7FD] flex items-center justify-center rounded-full cursor-pointer hover:bg-blue-300 transition-all duration-200">
+                <div className="size-9 animate-bounce bg-[#E1E7FD] flex items-center justify-center rounded-full cursor-pointer hover:bg-blue-300 transition-all duration-200">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
