@@ -5,10 +5,12 @@ import Navbar from "@/components/Navbar/Navbar";
 
 const bricolage_grotesque = Bricolage_Grotesque({
   variable: "--font-bricolage_grotesque",
+  subsets: ["latin", "latin-ext", "vietnamese"],
 });
 
 const playfair_display = Playfair_Display({
   variable: "--font-playfair_display",
+  subsets: ["cyrillic", "latin", "latin-ext", "vietnamese"],
 });
 
 export const metadata: Metadata = {
