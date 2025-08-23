@@ -171,8 +171,8 @@ export default function HeroSection() {
         />
 
         {/* Floating Glow Orbs */}
-        <div className="glow-orb glow-orb-1 absolute top-20 left-20 w-64 h-64 bg-purple-400 rounded-full blur-3xl opacity-30" />
-        <div className="glow-orb glow-orb-2 absolute bottom-20 right-20 w-48 h-48 bg-blue-400 rounded-full blur-3xl opacity-40" />
+        <div className="glow-orb glow-orb-1 absolute top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30" />
+        <div className="glow-orb glow-orb-2 absolute bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40" />
 
         {/* Main Content */}
         <div className="relative z-10 container mx-auto px-6 py-20">
