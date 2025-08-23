@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { AnimatedButton } from "../Navbar/animated-button";
+import Image from "next/image";
 
 export default function HeroSection() {
+  const [isBgLoaded, setIsBgLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const taglineRef = useRef<HTMLDivElement>(null);
@@ -182,16 +184,19 @@ export default function HeroSection() {
               {/* Tagline */}
               <div
                 ref={taglineRef}
-                className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-gray-600 border border-white/20"
+                className="inline-flex items-center gap-2  backdrop-blur-sm bg-[#ffffff0D] rounded-full text-[#1C2E61] px-4 py-2 text-base font-medium  border border-white/40"
               >
-                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                We Are Design First Development Company
+                <span className="inline-block text-lg font-medium border border-white/40 px-4 rounded-full">
+                  We Are
+                </span>
+                <div className="w-2 h-2 rounded-full animate-pulse" />
+                Design First Development Company
               </div>
 
               {/* Main Heading */}
               <h1
                 ref={headingRef}
-                className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-5xl lg:text-6xl font-bold text-[#060018] leading-tight"
               >
                 {splitTextIntoWords(
                   "We solve business problems through technology."
@@ -201,7 +206,7 @@ export default function HeroSection() {
               {/* Subtext */}
               <p
                 ref={subtextRef}
-                className="text-lg text-gray-600 max-w-md leading-relaxed"
+                className="text-lg text-[#535E7C] max-w-lg font-normal leading-relaxed"
               >
                 UI/UX Design • Custom Development • AI & Automation
               </p>
