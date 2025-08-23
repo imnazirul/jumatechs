@@ -177,7 +177,7 @@ export default function HeroSection() {
         <div className="glow-orb glow-orb-2 absolute bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40" />
 
         {/* Main Content */}
-        <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="relative z-10 max-w-screen-2xl mx-auto px-6 py-10 mt-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
             {/* Left Content */}
             <div className="space-y-8">

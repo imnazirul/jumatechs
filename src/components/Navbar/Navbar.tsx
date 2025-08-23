@@ -220,7 +220,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 text-sm lg:py-5`}
     >
       <div
-        className={`navbar-container max-w-screen-xl py-3 lg:rounded-xl transition-all  font-[inter] ] mx-auto overflow-hidden px-4 flex items-center justify-between text-[#060018]
+        className={`navbar-container max-w-screen-2xl py-3 lg:rounded-xl transition-all  font-[inter] ] mx-auto overflow-hidden px-4 flex items-center justify-between text-[#060018]
         }`}
       >
         <div className="flex items-center">
