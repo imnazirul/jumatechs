@@ -30,8 +30,6 @@ export default function RootLayout({
       <body
         className={`${bricolage_grotesque.variable} ${playfair_display.variable} antialiased`}
       >
-        <PreloaderOverlay />
-        <Navbar />
         {children}
       </body>
     </html>
