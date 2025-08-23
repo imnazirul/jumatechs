@@ -1,0 +1,146 @@
+#items div a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    #060018,
+    #060018
+  ); /* Adjust this color as needed */
+  bottom: -2px; /* Adjust the distance from the text */
+  right: 0;
+  transition: width 0.3s ease, right 0.3s ease;
+}
+#items div {
+  position: relative;
+}
+
+#items div a:hover {
+  color: #060018;
+}
+
+/* .sm-menu li a:hover {
+  text-decoration: underline;
+} */
+
+#items div a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* *************** */
+
+/* Hamburger and cross icons */
+.navbar-toggler {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+  display: none; /* Hidden by default on larger screens */
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -10px;
+}
+
+.navbar-toggler-icon::after {
+  bottom: -10px;
+}
+
+/* Toggle button open state */
+.navbar-toggler.open .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler.open .navbar-toggler-icon::before {
+  transform: translateY(10px) rotate(90deg);
+}
+
+.navbar-toggler.open .navbar-toggler-icon::after {
+  transform: translateY(-10px) rotate(-90deg);
+}
+
+/* Navbar animation */
+.navbar-nav.active {
+  top: 60px; /* Bring navbar-nav into view */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1023px) {
+  .navbar-toggler {
+    display: block; /* Displayed on smaller screens */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  }
+}
+
+.active {
+  color: #c0a1f7;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    #7d3af0,
+    #39157c
+  ); /* Adjust this color as needed */
+  bottom: -3px; /* Adjust the distance from the text */
+  right: 0;
+}
+
+/******************************/
+
+.hamburger {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.open .line:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.open .line:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
