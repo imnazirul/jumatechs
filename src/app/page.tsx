@@ -14,15 +14,15 @@ const Page = () => {
     return () => clearTimeout(id);
   }, []);
 
-  // if (show)
-  //   return (
-  //     <div
-  //       //   aria-hidden="true"
-  //       className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
-  //     >
-  //       <AwesomeLoader />
-  //     </div>
-  //   );
+  if (show)
+    return (
+      <div
+        //   aria-hidden="true"
+        className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+      >
+        <AwesomeLoader />
+      </div>
+    );
 
   return (
     <div className="font-bricolage_grotesque ">
