@@ -28,7 +28,7 @@ const Page = () => {
   return (
     <div className="font-bricolage_grotesque mb-40">
       {/* <PreloaderOverlay /> */}
-      <Navbar />
+      {/* <Navbar /> */}
       <Banner />
       <TrustedIndustries />
       <GSAPHoverButton
