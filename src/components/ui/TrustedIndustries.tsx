@@ -3,81 +3,24 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import TrustedBottomSection from "./TrustedBottomSection";
+import { useIntersectionObserver } from "@/helpers/use-intersection-observer";
 
 export default function TrustedCompanies() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const logosRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!containerRef.current || !logosRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Initial animation on mount
-      gsap.fromTo(
-        containerRef.current,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-      );
-
-      // Stagger animation for logos
-      gsap.fromTo(
-        ".company-logo",
-        { opacity: 0, y: 30, scale: 0.8 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "back.out(1.7)",
-          delay: 0.3,
-        }
-      );
-
-      // Continuous floating animation for logos
-      gsap.to(".company-logo", {
-        y: -5,
-        duration: 2,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1,
-        stagger: 0.2,
-      });
-
-      // Hover animations
-      const logos = document.querySelectorAll(".company-logo");
-      logos.forEach((logo) => {
-        const element = logo as HTMLElement;
-
-        element.addEventListener("mouseenter", () => {
-          gsap.to(element, {
-            scale: 1.1,
-            y: -10,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        });
-
-        element.addEventListener("mouseleave", () => {
-          gsap.to(element, {
-            scale: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        });
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+  const { ref: headerRef, isIntersecting: headerVisible } =
+    useIntersectionObserver();
 
   return (
-    <section className="py-16 font-bricolage_grotesque pt-40 bg-[#060018] relative overflow-hidden">
+    <section className="py-16 font-bricolage_grotesque  pt-40 bg-[#060018] relative overflow-hidden">
       {/* Background animated elements */}
 
       <div
-        ref={containerRef}
+        ref={headerRef}
+        className={`text-center md:mb-16 mb-4 transition-all duration-1000 ease-out ${
+          headerVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
+        } max-w-[1311px] mx-auto h-48 mb-52`}
         style={{
           position: "relative",
           borderRadius: "20px",
@@ -85,7 +28,6 @@ export default function TrustedCompanies() {
           background:
             "linear-gradient(90deg, rgba(72,115,233,1), rgba(255,255,255,0))",
         }}
-        className="max-w-[1311px] mx-auto h-48"
       >
         <p className="text-white absolute left-[50%] border-b border-[#4873E980] translate-x-[-50%] text-[32px] z-50 text-center py-5 w-[557px] mx-auto rounded-[10000px] -mt-10 bg-[#060018]">
           Trusted By Industry Giants
@@ -94,7 +36,7 @@ export default function TrustedCompanies() {
           style={{
             height: "100%",
             width: "100%",
-            borderRadius: "19px", 
+            borderRadius: "19px",
             background:
               "radial-gradient(72.87% 114.83% at 17.58% 4.3%, rgba(46, 167, 255, 0.25) 0%, rgba(28, 27, 51, 0.10) 78.06%), #060018",
             overflow: "",
@@ -234,6 +176,10 @@ export default function TrustedCompanies() {
             />
           </div>
         </div>
+      </div>
+
+      <div>
+        <TrustedBottomSection />
       </div>
     </section>
   );

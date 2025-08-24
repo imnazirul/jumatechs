@@ -1,180 +1,130 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { AnimatedButton } from "../Navbar/animated-button";
-import Image from "next/image";
 
-export default function HeroSection() {
-  const [isBgLoaded, setIsBgLoaded] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
-  const taglineRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const subtextRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const badgesRef = useRef<HTMLDivElement>(null);
-  const illustrationRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Background glow animation
-      gsap.to(backgroundRef.current, {
-        background:
-          "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
-        duration: 8,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-      });
-
-      // Floating orbs animation
-      gsap.set(".glow-orb", { opacity: 0.6 });
-      gsap.to(".glow-orb-1", {
-        x: 100,
-        y: -50,
-        scale: 1.2,
-        duration: 6,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-      });
-      gsap.to(".glow-orb-2", {
-        x: -80,
-        y: 60,
-        scale: 0.8,
-        duration: 8,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-        delay: 1,
-      });
-
-      // Initial entrance animations
-      const tl = gsap.timeline();
-
-      // Tagline typewriter effect
-      tl.from(taglineRef.current, {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-
-      // Main heading word-by-word reveal
-      const headingWords = headingRef.current?.querySelectorAll(".word");
-      if (headingWords) {
-        tl.from(
-          headingWords,
-          {
-            opacity: 0,
-            y: 50,
-            rotationX: -90,
-            transformOrigin: "center bottom",
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "back.out(1.7)",
-          },
-          "-=0.4"
-        );
-      }
-
-      // Subtext fade in with blur
-      tl.from(
-        subtextRef.current,
-        {
-          opacity: 0,
-          y: 20,
-          filter: "blur(10px)",
-          duration: 1,
-          ease: "power2.out",
-        },
-        "-=0.6"
-      );
-
-      // Button entrance with bounce
-      tl.from(
-        buttonRef.current,
-        {
-          opacity: 0,
-          scale: 0.8,
-          y: 30,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-        },
-        "-=0.4"
-      );
-
-      // Badges slide up
-      tl.from(
-        badgesRef.current?.children || [],
-        {
-          opacity: 0,
-          y: 40,
-          duration: 0.6,
-          stagger: 0.2,
-          ease: "power2.out",
-        },
-        "-=0.6"
-      );
-
-      // 3D illustration entrance
-      tl.from(
-        illustrationRef.current,
-        {
-          opacity: 0,
-          scale: 0.6,
-          rotationY: 45,
-          duration: 1.2,
-          ease: "power3.out",
-        },
-        "-=1"
-      );
-
-      // Continuous text glow animation
-      gsap.to(headingRef.current, {
-        textShadow:
-          "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-      });
-
-      // Floating animation for illustration
-      gsap.to(illustrationRef.current, {
-        y: -20,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-        delay: 2,
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
+export default function HeroSectionFramer() {
   const splitTextIntoWords = (text: string) => {
     return text.split(" ").map((word, index) => (
-      <span key={index} className="word inline-block mr-2">
+      <motion.span
+        key={index}
+        className="word inline-block mr-2"
+        initial={{ opacity: 0, y: 50, rotateX: -90 }}
+        animate={{ opacity: 1, y: 0, rotateX: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.4 + index * 0.1,
+          ease: [0.68, -0.55, 0.265, 1.55], // back.out(1.7) equivalent
+        }}
+        style={{ transformOrigin: "center bottom" }}
+      >
         {word}
-      </span>
+      </motion.span>
     ));
+  };
+
+  // Background gradient animation variants
+  const backgroundVariants = {
+    animate: {
+      background: [
+        "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
+        "linear-gradient(135deg, #1C59FF 15%, #1C59FF 15%, #1C59FF 20%, #1C59FF 25%, #1C59FF00 30%)",
+        "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
+      ],
+      transition: {
+        duration: 8,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  // Floating orb animations
+  const orb1Variants = {
+    animate: {
+      x: [0, 100, 0],
+      y: [0, -50, 0],
+      scale: [1, 1.2, 1],
+      transition: {
+        duration: 6,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const orb2Variants = {
+    animate: {
+      x: [0, -80, 0],
+      y: [0, 60, 0],
+      scale: [1, 0.8, 1],
+      transition: {
+        duration: 8,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+        delay: 1,
+      },
+    },
+  };
+
+  // Text glow animation
+  const textGlowVariants = {
+    animate: {
+      textShadow: [
+        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+        "0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)",
+        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+      ],
+      transition: {
+        duration: 3,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  // Illustration floating animation
+  const illustrationFloatVariants = {
+    animate: {
+      y: [0, -20, 0],
+      transition: {
+        duration: 4,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+        delay: 2,
+      },
+    },
   };
 
   return (
     <div className="bg-[url('/images/Firefly-20250808011206.svg')] h-[100vh] bg-cover bg-center bg-no-repeat">
-      <div ref={containerRef} className="relative min-h-screen overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden">
         {/* Animated Background */}
-        <div
-          ref={backgroundRef}
+        <motion.div
           className="absolute inset-0 bg-gradient-to-br from-indigo-100 via-purple-50 to-purple-200"
+          variants={backgroundVariants as any}
+          animate="animate"
         />
 
         {/* Floating Glow Orbs */}
-        <div className="glow-orb glow-orb-1 absolute top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30" />
-        <div className="glow-orb glow-orb-2 absolute bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40" />
+        <motion.div
+          className="absolute top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30"
+          initial={{ opacity: 0.6 }}
+          variants={orb1Variants as any}
+          animate="animate"
+        />
+        <motion.div
+          className="absolute bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40"
+          initial={{ opacity: 0.6 }}
+          variants={orb2Variants as any}
+          animate="animate"
+        />
 
         {/* Main Content */}
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 py-10 mt-16">
@@ -182,43 +132,61 @@ export default function HeroSection() {
             {/* Left Content */}
             <div className="space-y-8">
               {/* Tagline */}
-              <div
-                ref={taglineRef}
-                className="inline-flex items-center gap-2  backdrop-blur-sm bg-[#ffffff0D] rounded-full text-[#1C2E61] px-4 py-2 text-base font-medium  border border-white/40"
+              <motion.div
+                className="inline-flex items-center gap-2 backdrop-blur-sm bg-[#ffffff0D] rounded-full text-[#1C2E61] px-4 py-2 text-base font-medium border border-white/40"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <span className="inline-block text-lg font-medium border border-white/40 px-4 rounded-full">
                   We Are
                 </span>
                 <div className="w-2 h-2 rounded-full animate-pulse" />
                 Design First Development Company
-              </div>
+              </motion.div>
 
               {/* Main Heading */}
-              <h1
-                ref={headingRef}
+              <motion.h1
                 className="text-5xl lg:text-6xl font-bold text-[#060018] leading-tight"
+                variants={textGlowVariants as any}
+                animate="animate"
               >
                 {splitTextIntoWords(
                   "We solve business problems through technology."
                 )}
-              </h1>
+              </motion.h1>
 
               {/* Subtext */}
-              <p
-                ref={subtextRef}
+              <motion.p
                 className="text-lg text-[#535E7C] max-w-lg font-normal leading-relaxed"
+                initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
               >
                 UI/UX Design • Custom Development • AI & Automation
-              </p>
+              </motion.p>
 
               {/* CTA Button */}
-              <div ref={buttonRef}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 1,
+                  ease: [0.68, -0.55, 0.265, 1.55], // back.out(1.7) equivalent
+                }}
+              >
                 <AnimatedButton />
-              </div>
+              </motion.div>
 
               {/* Company Badges */}
-              <div ref={badgesRef} className="flex items-center gap-8 pt-12">
-                <div className="flex items-center gap-3">
+              <div className="flex items-center gap-8 pt-12">
+                <motion.div
+                  className="flex items-center gap-3"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                >
                   <div className="size-[58px] bg-[#ffffff33] border border-white rounded-full flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -239,9 +207,14 @@ export default function HeroSection() {
                     </div>
                     <div className="text-sm text-[#454648]">Upwork</div>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-3">
+                <motion.div
+                  className="flex items-center gap-3"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+                >
                   <div className="size-[58px] bg-[#ffffff33] border border-white rounded-full flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -268,12 +241,18 @@ export default function HeroSection() {
                       providers by Clutch
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
             {/* Right Illustration */}
-            <div ref={illustrationRef} className="relative">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+              variants={illustrationFloatVariants as any}
+            >
               <div className="relative w-full max-w-lg mx-auto">
                 {/* 3D Blue Geometric Shape */}
                 <div className="relative">
@@ -295,7 +274,7 @@ export default function HeroSection() {
                 <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
                 <div className="absolute top-1/3 -right-8 w-4 h-4 bg-pink-400 rounded-full animate-ping" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
