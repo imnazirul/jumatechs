@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolage_grotesque.variable} ${playfair_display.variable} antialiased`}
+        className={`${bricolage_grotesque.variable} ${playfair_display.variable} antialiased bg-[#060018]`}
       >
         <SmoothScroll />
         {children}

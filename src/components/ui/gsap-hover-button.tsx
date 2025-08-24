@@ -97,8 +97,7 @@ export default function GSAPHoverButton({
       ref={buttonRef}
       onClick={onClick}
       className={`
-        relative overflow-hidden px-8 py-4 rounded-full border-2
-        border-black bg-transparent text-black font-medium
+        relative overflow-hidden rounded-full  text-black font-medium
         transition-colors duration-300 hover:text-white active:text-white
         touch-manipulation select-none ${className}
       `}
@@ -124,7 +123,7 @@ export default function GSAPHoverButton({
       {/* Overlay */}
       <div
         ref={overlayRef}
-        className="absolute size-40 inset-0 bg-black rounded-full"
+        className="absolute size-40 inset-0 bg-[#060018] rounded-full"
         style={{
           pointerEvents: "none",
         }}

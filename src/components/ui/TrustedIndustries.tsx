@@ -13,7 +13,6 @@ export default function TrustedCompanies() {
   return (
     <section className="py-16 font-bricolage_grotesque  pt-40 bg-[#060018] relative overflow-hidden">
       {/* Background animated elements */}
-
       <div
         ref={headerRef}
         className={`text-center md:mb-16 mb-4 transition-all duration-1000 ease-out ${

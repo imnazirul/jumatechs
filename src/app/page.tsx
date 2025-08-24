@@ -3,6 +3,7 @@ import AwesomeLoader from "@/components/Banner/awesome-loader";
 import Banner from "@/components/Banner/Banner";
 import PreloaderOverlay from "@/components/Loader/PreloaderOverlay";
 import Navbar from "@/components/Navbar/Navbar";
+import Projects from "@/components/Projects";
 import GSAPHoverButton from "@/components/ui/gsap-hover-button";
 import SmoothScroll from "@/components/ui/smooth-scroll.tsx";
 import TrustedIndustries from "@/components/ui/TrustedIndustries";
@@ -15,15 +16,15 @@ const Page = () => {
     return () => clearTimeout(id);
   }, []);
 
-  // if (show)
-  //   return (
-  //     <div
-  //       //   aria-hidden="true"
-  //       className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
-  //     >
-  //       <AwesomeLoader />
-  //     </div>
-  //   );
+  if (show)
+    return (
+      <div
+        //   aria-hidden="true"
+        className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+      >
+        <AwesomeLoader />
+      </div>
+    );
 
   return (
     <div className="font-bricolage_grotesque mb-40">
@@ -31,8 +32,9 @@ const Page = () => {
       <Navbar />
       <Banner />
       <TrustedIndustries />
+      <Projects />
       <GSAPHoverButton
-        className="bg-white text-black border-black hover:text-black"
+        className="bg-white text-black px-7 py-3 border-black hover:text-black"
         onClick={() => console.log("Custom button clicked")}
       >
         Custom Style Button
