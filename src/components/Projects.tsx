@@ -71,16 +71,16 @@ const Projects = () => {
               <path
                 d="M7.93945 19.5606L19.0601 8.43994"
                 stroke="white"
-                stroke-width="2.22414"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.22414"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M7.93945 8.43994H19.0601V19.5606"
                 stroke="white"
-                stroke-width="2.22414"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.22414"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </GSAPHoverButton>

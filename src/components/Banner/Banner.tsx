@@ -147,12 +147,12 @@ export default function HeroSectionFramer() {
 
               {/* Main Heading */}
               <motion.h1
-                className="text-5xl lg:text-6xl font-bold text-[#060018] leading-tight"
+                className="text-5xl lg:text-7xl font-bold text-[#060018] leading-tight"
                 variants={textGlowVariants as any}
                 animate="animate"
               >
                 {splitTextIntoWords(
-                  "We solve business problems through technology."
+                  "We  solve  business problems  through technology."
                 )}
               </motion.h1>
 
