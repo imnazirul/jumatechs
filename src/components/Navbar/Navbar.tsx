@@ -52,8 +52,8 @@ export default function Navbar() {
         navbarRef?.current &&
           gsap.to(navbarRef?.current?.querySelector(".navbar-container"), {
             backgroundColor: scrolled
-              ? "rgba(255, 255, 255, 0.95)"
-              : "rgba(255, 255, 255, 0.1)",
+              ? "rgba(255, 255, 255, 1)"
+              : "rgba(255, 255, 255, 0.0)",
             backdropFilter: scrolled ? "blur(20px)" : "",
             duration: 0.3,
             ease: "power2.out",

@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import GSAPHoverButton from "@/components/ui/gsap-hover-button";
 import SmoothScroll from "@/components/ui/smooth-scroll.tsx";
 import TrustedIndustries from "@/components/ui/TrustedIndustries";
+import GradientBorderCard from "@/components/Video";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
@@ -33,6 +34,7 @@ const Page = () => {
       <Banner />
       <TrustedIndustries />
       <Projects />
+      <GradientBorderCard />
       {/* <GSAPHoverButton
         className="bg-white text-black px-7 py-3 border-black hover:text-black"
         onClick={() => console.log("Custom button clicked")}
