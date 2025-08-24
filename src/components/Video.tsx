@@ -125,13 +125,24 @@ export default function GradientBorderCard() {
           style={{}}
           className="overflow-hidden  rounded-4xl text-white/50 bg-neutral-900  h-full border-neutral-800 text-center text-xs"
         >
-          <Image
-            src={"/Image (1).svg"}
+          {/* <Image
+            src={"https://images.unsplash.com/photo-1536485255710-1bedfeea2d52?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
             alt="image"
             width={1920}
             height={1080}
             className="h-full w-full object-cover"
-          />
+          /> */}
+          <iframe
+            // width="560"
+            // height="315"
+            src="https://www.youtube.com/embed/AW1yfBKRMKc?si=WNe6saR1xleM2m1m"
+            title="YouTube video player"
+            frameBorder="0"
+            className="h-full w-full object-cover"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </motion.div>
       <Marquee />
