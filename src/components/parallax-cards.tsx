@@ -4,155 +4,127 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 
-const cardData = [
+export const projects = [
   {
-    id: 1,
-    title: "Creative Design",
+    title: "Matthias Leidinger",
     description:
-      "Innovative solutions that push the boundaries of digital design and user experience.",
-    image: "/modern-creative-design-workspace.png",
-    color: "from-purple-500 to-pink-500",
+      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+    src: "rock.jpg",
+    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
+    color: "#BBACAF",
   },
   {
-    id: 2,
-    title: "Development",
+    title: "Clément Chapillon",
     description:
-      "Cutting-edge development practices using the latest technologies and frameworks.",
-    image: "/coding-development-setup.png",
-    color: "from-blue-500 to-cyan-500",
+      "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes - so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for 'The tawny rocks').",
+    src: "tree.jpg",
+    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
+    color: "#977F6D",
   },
   {
-    id: 3,
-    title: "Strategy",
+    title: "Zissou",
     description:
-      "Data-driven strategies that deliver measurable results and business growth.",
-    image: "/business-strategy-planning.png",
-    color: "from-green-500 to-emerald-500",
+      "Though he views photography as a medium for storytelling, Zissou's images don't insist on a narrative. Both crisp and ethereal, they're encoded with an ambiguity - a certain tension - that lets the viewer find their own story within them.",
+    src: "water.jpg",
+    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
+    color: "#C2491D",
   },
   {
-    id: 4,
-    title: "Innovation",
+    title: "Matthias Leidinger",
     description:
-      "Forward-thinking approaches that transform ideas into reality.",
-    image: "/innovation-technology-future.png",
-    color: "from-orange-500 to-red-500",
+      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+    src: "rock.jpg",
+    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
+    color: "#BBACAF",
   },
   {
-    id: 5,
-    title: "Excellence",
+    title: "Clément Chapillon",
     description:
-      "Commitment to quality and excellence in every project we undertake.",
-    image: "/excellence-quality-achievement.png",
-    color: "from-indigo-500 to-purple-500",
+      "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes - so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for 'The tawny rocks').",
+    src: "tree.jpg",
+    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
+    color: "#977F6D",
   },
-];
+]
 
-export function ParallaxCards() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
 
+export default function ParallaxCards() {
   return (
-    <div ref={containerRef} className="relative">
-      <section className="relative py-20 pb-40">
-        <div className="w-full mx-auto">
-          <div className="space-y-24">
-            {cardData.map((card, index) => (
-              <ParallaxCard
-                key={card.id}
-                card={card}
-                index={index}
-                progress={smoothProgress}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+    <main className="">
+      {projects.map((project, i) => (
+        <Card key={`p_${i}`} {...project} i={i} />
+      ))}
+    </main>
+  )
 }
 
-function ParallaxCard({
-  card,
-  index,
-  progress,
-}: {
-  card: (typeof cardData)[0];
-  index: number;
-  progress: any;
-}) {
-  const cardRef = useRef<HTMLDivElement>(null);
 
+
+interface CardProps {
+  title: string
+  description: string
+  src: string
+  link: string
+  color: string
+  i: number
+}
+
+const Card = ({ title, description, src, link, color, i }: CardProps) => {
+  const container = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "end start"],
-  });
-
-
-  // Stagger the cards with different offsets
-  const offset = index * 50;
-  const yWithOffset = useTransform(progress, [1, 0], [offset, -offset]);
-
-
+    target: container,
+    offset: ["start end", "start start"],
+  })
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
 
   return (
-    <motion.div
-      ref={cardRef}
-      style={{
-        y: yWithOffset,
+    <div ref={container} className="h-screen flex items-center justify-center sticky top-0">
+      <div
+        className="flex flex-col relative h-[500px] w-full rounded-[25px] p-12 origin-top"
+        style={{
+          backgroundColor: color,
+          top: `calc(-5vh + ${i * 25}px)`,
+        }}
+      >
+        <h2 className="text-center m-0 text-[28px] font-bold">{title}</h2>
+        <div className="flex h-full mt-12 gap-12">
+          <div className="w-2/5 relative top-[10%]">
+            <p className="text-base leading-relaxed">
+              <span className="text-[28px] font-serif float-left leading-none pr-1">{description.charAt(0)}</span>
+              {description.slice(1)}
+            </p>
+            <div className="flex items-center gap-1 mt-4">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs underline cursor-pointer hover:opacity-70 transition-opacity"
+              >
+                See more
+              </a>
+              <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+          </div>
 
-      }}
-      className="sticky top-52"
-    >
-      <div className="overflow-hidden rounded-lg bg-white  hover:shadow-3xl transition-shadow duration-500 border border-gray-200">
-        <div className="relative h-[500px] group">
-          {/* Background Image */}
-          <motion.div
-            className="absolute inset-0"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <Image
-              src={"/images/Firefly-20250808011206.svg"}
-              alt={card.title}
-              width={1440}
-              height={1080}
-              className="w-full h-full object-cover"
-            />
-            <div
-              className={`absolute inset-0 bg-gradient-to-r ${card.color} opacity-60 group-hover:opacity-40 transition-opacity duration-500`}
-            />
-          </motion.div>
-
-          {/* Content Overlay */}
-          <div className="relative z-10 h-full flex flex-col justify-end p-8 text-white">
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-            >
-              <h3 className="text-3xl font-bold mb-4">{card.title}</h3>
-              <p className="text-lg leading-relaxed opacity-90">
-                {card.description}
-              </p>
+          <div className="relative w-3/5 h-full rounded-[25px] overflow-hidden">
+            <motion.div className="w-full h-full" style={{ scale: imageScale }}>
+              <Image
+                fill
+                src={'/images/Firefly-20250808011206.svg'}
+                alt={title}
+                className="object-cover"
+              />
             </motion.div>
           </div>
-
-          {/* Hover Effect Overlay */}
-          <motion.div
-            className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-            initial={false}
-          />
         </div>
       </div>
-    </motion.div>
-  );
+    </div>
+  )
 }
+

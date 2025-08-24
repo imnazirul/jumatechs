@@ -1,7 +1,7 @@
 import React from "react";
 import GSAPHoverButton from "./ui/gsap-hover-button";
 import { useIntersectionObserver } from "@/helpers/use-intersection-observer";
-import { ParallaxCards } from "./parallax-cards";
+import ParallaxCards from "./parallax-cards";
 
 const projects = [
   "MEDICAL",
@@ -20,7 +20,7 @@ const Projects = () => {
     useIntersectionObserver();
   return (
     <div className="bg-[#F5F5F5]  rounded-[64px]">
-      <div className={`max-w-screen-2xl mx-auto py-32`}>
+      <div className={`max-w-screen-2xl mx-auto py-20`}>
         <div
           ref={projectTitle}
           className={`flex gap-20 mb-20 transition-all duration-500 items-start ${
@@ -56,7 +56,7 @@ const Projects = () => {
           </div>
         </div>
         <ParallaxCards />
-        <div className="my-20 flex items-center justify-center gap-2">
+        <div className=" flex items-center justify-center gap-2">
           <GSAPHoverButton className="bg-[#1C59FF] px-12 py-3 text-white text-lg">
             View all Works
           </GSAPHoverButton>
