@@ -29,7 +29,8 @@ const Page = () => {
     <div className="font-bricolage_grotesque mb-40">
       {/* <PreloaderOverlay /> */}
       <Navbar />
-      <SmoothScroll />
+      <Banner />
+      <TrustedIndustries />
       <GSAPHoverButton
         className="bg-white text-black border-black hover:text-black"
         onClick={() => console.log("Custom button clicked")}
