@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useIntersectionObserver } from "@/helpers/use-intersection-observer";
 import Image from "next/image";
-import { AnimatedButton } from "../Navbar/animated-button";
+// import { AnimatedButton } from "../Navbar/animated-button";
 
 export default function TrustedBottomSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -137,7 +137,7 @@ export default function TrustedBottomSection() {
             professional IT services for entrepreneurs and companies around the
             world.
           </p>
-          <AnimatedButton />
+          {/* <AnimatedButton /> */}
         </div>
       </div>
     </div>
