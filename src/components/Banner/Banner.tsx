@@ -258,9 +258,9 @@ export default function HeroSectionFramer() {
                 <div className="relative">
                   <div className="w-80 h-80 mx-auto relative">
                     {/* Main 3D blocks */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl transform rotate-12 shadow-2xl" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl transform rotate-12 shadow-2xl" />
                     <div className="absolute inset-2 bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl transform -rotate-6 shadow-xl" />
-                    <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl shadow-lg" />
+                    <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl shadow-lg" /> */}
 
                     {/* Accent elements */}
                     <div className="absolute top-8 right-8 w-6 h-6 bg-yellow-400 rounded-full shadow-lg" />
