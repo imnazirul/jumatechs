@@ -28,15 +28,15 @@ const Page = () => {
   return (
     <div className="font-bricolage_grotesque mb-40">
       {/* <PreloaderOverlay /> */}
-      {/* <Navbar /> */}
+      <Navbar />
       <Banner />
       <TrustedIndustries />
-      {/* <GSAPHoverButton
+      <GSAPHoverButton
         className="bg-white text-black border-black hover:text-black"
         onClick={() => console.log("Custom button clicked")}
       >
         Custom Style Button
-      </GSAPHoverButton> */}
+      </GSAPHoverButton>
     </div>
   );
 };
