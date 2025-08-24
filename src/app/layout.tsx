@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
-import PreloaderOverlay from "@/components/Loader/PreloaderOverlay";
 import SmoothScroll from "@/components/ui/smooth-scroll.tsx";
 
 const bricolage_grotesque = Bricolage_Grotesque({

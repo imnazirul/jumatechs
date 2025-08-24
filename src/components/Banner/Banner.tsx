@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { AnimatedButton } from "../Navbar/animated-button";
+// import { AnimatedButton } from "../Navbar/animated-button";
 
 export default function HeroSectionFramer() {
   const splitTextIntoWords = (text: string) => {
@@ -176,7 +176,7 @@ export default function HeroSectionFramer() {
                   ease: [0.68, -0.55, 0.265, 1.55], // back.out(1.7) equivalent
                 }}
               >
-                <AnimatedButton />
+                {/* <AnimatedButton /> */}
               </motion.div>
 
               {/* Company Badges */}

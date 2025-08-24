@@ -31,12 +31,12 @@ const Page = () => {
       {/* <Navbar /> */}
       <Banner />
       <TrustedIndustries />
-      <GSAPHoverButton
+      {/* <GSAPHoverButton
         className="bg-white text-black border-black hover:text-black"
         onClick={() => console.log("Custom button clicked")}
       >
         Custom Style Button
-      </GSAPHoverButton>
+      </GSAPHoverButton> */}
     </div>
   );
 };
