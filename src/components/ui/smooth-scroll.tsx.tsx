@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -6,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 const SmoothScroll = () => {
-  const lenisRef = useRef(null);
+  const lenisRef = useRef<any>(null);
   const pathname = usePathname();
 
   useEffect(() => {
