@@ -74,35 +74,35 @@ export default function HeroSectionFramer() {
   // };
 
   // Text glow animation
-  const textGlowVariants = {
-    animate: {
-      textShadow: [
-        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
-        "0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)",
-        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
-      ],
-      transition: {
-        duration: 3,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
+  // const textGlowVariants = {
+  //   animate: {
+  //     textShadow: [
+  //       "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+  //       "0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)",
+  //       "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+  //     ],
+  //     transition: {
+  //       duration: 3,
+  //       repeat: Number.POSITIVE_INFINITY,
+  //       repeatType: "reverse",
+  //       ease: "easeInOut",
+  //     },
+  //   },
+  // };
 
-  // Illustration floating animation
-  const illustrationFloatVariants = {
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 4,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
-        delay: 2,
-      },
-    },
-  };
+  // // Illustration floating animation
+  // const illustrationFloatVariants = {
+  //   animate: {
+  //     y: [0, -20, 0],
+  //     transition: {
+  //       duration: 4,
+  //       repeat: Number.POSITIVE_INFINITY,
+  //       repeatType: "reverse",
+  //       ease: "easeInOut",
+  //       delay: 2,
+  //     },
+  //   },
+  // };
 
   return (
     <div className="bg-[url('/images/Firefly-20250808011206.svg')] min-h-[100vh] bg-cover bg-left md:bg-center bg-no-repeat">
@@ -140,7 +140,7 @@ export default function HeroSectionFramer() {
               {/* Main Heading */}
               <motion.h1
                 className="text-[40px] md:text-5xl lg:text-7xl font-bold text-[#060018] leading-tight"
-                variants={textGlowVariants as any}
+                // variants={textGlowVariants as any}
                 animate="animate"
               >
                 {splitTextIntoWords(
@@ -244,7 +244,7 @@ export default function HeroSectionFramer() {
                 initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-                variants={illustrationFloatVariants as any}
+                // variants={illustrationFloatVariants as any}
               >
                 <div className="relative w-full max-w-lg mx-auto">
                   {/* 3D Blue Geometric Shape */}
