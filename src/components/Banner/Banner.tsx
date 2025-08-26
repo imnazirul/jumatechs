@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "../Navbar/animated-button";
+import FloatingOrbsBackground from "./floating-orbs-background";
 
 export default function HeroSectionFramer() {
   const splitTextIntoWords = (text: string) => {
@@ -107,24 +108,27 @@ export default function HeroSectionFramer() {
       <div className="relative min-h-screen overflow-hidden">
         {/* Animated Background */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-indigo-100 via-purple-50 to-purple-200"
+          className="absolute max-md:hidden inset-0 bg-gradient-to-br from-indigo-100 via-purple-50 to-purple-200"
           variants={backgroundVariants as any}
           animate="animate"
         />
 
         {/* Floating Glow Orbs */}
         <motion.div
-          className="absolute top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30"
+          className="absolute max-md:hidden top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30"
           initial={{ opacity: 0.6 }}
           variants={orb1Variants as any}
           animate="animate"
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40"
+          className="absolute max-md:hidden bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40"
           initial={{ opacity: 0.6 }}
           variants={orb2Variants as any}
           animate="animate"
         />
+        <div className="md:hidden">
+          <FloatingOrbsBackground />
+        </div>
 
         {/* Main Content */}
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 py-10 mt-16">

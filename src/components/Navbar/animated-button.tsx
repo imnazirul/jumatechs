@@ -37,7 +37,7 @@ export function AnimatedButton() {
 
     gsap.to(glow, {
       opacity: 0.4,
-    //   scale: 1.05,
+      //   scale: 1.05,
       duration: 2,
       ease: "power2.inOut",
       yoyo: true,
@@ -64,12 +64,12 @@ export function AnimatedButton() {
         ease: "power2.out",
       });
 
-        // gsap.to(glow, {
-        //   opacity: 0.7,
-        //   scale: 1.15,
-        //   duration: 0.3,
-        //   ease: "power2.out",
-        // })
+      // gsap.to(glow, {
+      //   opacity: 0.7,
+      //   scale: 1.15,
+      //   duration: 0.3,
+      //   ease: "power2.out",
+      // })
     };
 
     const handleMouseLeave = () => {
@@ -149,7 +149,7 @@ export function AnimatedButton() {
     <div className="relative inline-block">
       <button
         ref={buttonRef}
-        className="relative bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-colors duration-300 overflow-hidden"
+        className="relative bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold  py-3 md:py-4 px-5 md:px-8 rounded-full text-lg transition-colors duration-300 overflow-hidden"
         onClick={() => console.log("Book A Meeting clicked!")}
       >
         <svg
