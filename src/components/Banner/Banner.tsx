@@ -103,7 +103,7 @@ export default function HeroSectionFramer() {
   };
 
   return (
-    <div className="bg-[url('/images/Firefly-20250808011206.svg')] h-[100vh] bg-cover bg-center bg-no-repeat">
+    <div className="bg-[url('/images/Firefly-20250808011206.svg')] min-h-[100vh] bg-cover bg-left md:bg-center bg-no-repeat">
       <div className="relative min-h-screen overflow-hidden">
         {/* Animated Background */}
         <motion.div
@@ -133,12 +133,12 @@ export default function HeroSectionFramer() {
             <div className="space-y-8">
               {/* Tagline */}
               <motion.div
-                className="inline-flex items-center gap-2 backdrop-blur-sm bg-[#ffffff0D] rounded-full text-[#1C2E61] px-4 py-2 text-base font-medium border border-white/40"
+                className="inline-flex items-center gap-2 backdrop-blur-sm bg-[#ffffff0D] rounded-full text-white md:text-[#1C2E61] px-4 py-2  text-sm md:text-base font-medium border border-white/40"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <span className="inline-block text-lg font-medium border border-white/40 px-4 rounded-full">
+                <span className="inline-block text-base md:text-lg font-medium border border-white/40 px-2 text-nowrap md:px-4 rounded-full">
                   We Are
                 </span>
                 <div className="w-2 h-2 rounded-full animate-pulse" />
@@ -147,7 +147,7 @@ export default function HeroSectionFramer() {
 
               {/* Main Heading */}
               <motion.h1
-                className="text-5xl lg:text-7xl font-bold text-[#060018] leading-tight"
+                className="text-[40px] md:text-5xl lg:text-7xl font-bold text-[#060018] leading-tight"
                 variants={textGlowVariants as any}
                 animate="animate"
               >
@@ -180,7 +180,7 @@ export default function HeroSectionFramer() {
               </motion.div>
 
               {/* Company Badges */}
-              <div className="flex items-center gap-8 pt-12">
+              <div className="flex flex-col md:flex-row md:items-center gap-8 pt-12">
                 <motion.div
                   className="flex items-center gap-3"
                   initial={{ opacity: 0, y: 40 }}
@@ -247,7 +247,7 @@ export default function HeroSectionFramer() {
 
             {/* Right Illustration */}
             <motion.div
-              className="relative"
+              className="relative hidden lg:block"
               initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}

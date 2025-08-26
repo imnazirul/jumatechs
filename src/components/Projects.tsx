@@ -23,13 +23,13 @@ const Projects = () => {
       <div className={`max-w-screen-2xl mx-auto py-20`}>
         <div
           ref={projectTitle}
-          className={`flex gap-20 mb-20 transition-all duration-500 items-start ${
+          className={`flex gap-20 flex-col md:flex-row mb-20 transition-all duration-500 items-start ${
             isProjectVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-12"
           }`}
         >
-          <h1 className="text-[74px] leading-20 text-nowrap flex-1 font-semibold">
+          <h1 className="text-[74px] leading-20 md:text-nowrap flex-1 font-semibold">
             Amazing{" "}
             <span className="font-playfair_display italic text-[#1C59FF]">
               Live <br /> Projects
