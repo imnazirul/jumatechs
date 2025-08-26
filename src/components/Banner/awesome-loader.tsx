@@ -4,14 +4,15 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { useIsMobile } from "@/helpers/use-mobile";
 
 interface AwesomeLoaderProps {
-  size?: number;
+  s?: number;
   className?: string;
 }
 
 export default function AwesomeLoader({
-  size = 120,
+  s = 120,
   className = "",
 }: AwesomeLoaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,6 +21,9 @@ export default function AwesomeLoader({
   const pulseRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+
+  const size = isMobile ? s / 2 : s;
 
   useEffect(() => {
     if (
@@ -216,7 +220,10 @@ export default function AwesomeLoader({
         ))}
       </div>
 
-      <div ref={orbitRef} className="absolute inset-0  flex items-center justify-center">
+      <div
+        ref={orbitRef}
+        className="absolute inset-0  flex items-center justify-center"
+      >
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
@@ -248,7 +255,7 @@ export default function AwesomeLoader({
       <div className="absolute -bottom-12 text-center">
         <div
           ref={textRef}
-          className="text-4xl font-normal text-blue-600 text-nowrap tracking-wider"
+          className="text-2xl md:text-4xl font-normal text-blue-600 text-nowrap tracking-wider"
           style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
         >
           Jumatechs Software
@@ -402,7 +409,7 @@ export default function AwesomeLoader({
 //     });
 
 //     gsap.to(liquidBgRef.current, {
-//       background: `conic-gradient(from 0deg, 
+//       background: `conic-gradient(from 0deg,
 //         #3B82F6, #8B5CF6, #EC4899, #F59E0B, #10B981, #3B82F6)`,
 //       rotation: 360,
 //       duration: 8,

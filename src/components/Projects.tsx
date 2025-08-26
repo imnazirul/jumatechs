@@ -19,17 +19,17 @@ const Projects = () => {
   const { ref: projectTitle, isIntersecting: isProjectVisible } =
     useIntersectionObserver();
   return (
-    <div className="bg-[#F5F5F5]  rounded-[64px]">
-      <div className={`max-w-screen-2xl mx-auto py-20`}>
+    <div className="bg-[#F5F5F5] rounded-[32px] md:rounded-[64px]">
+      <div className={`max-w-screen-2xl mx-auto py-10 px-4 md:py-20`}>
         <div
           ref={projectTitle}
-          className={`flex gap-20 flex-col md:flex-row mb-20 transition-all duration-500 items-start ${
+          className={`flex gap-4 md:gap-20 flex-col md:flex-row mb-20 transition-all duration-500 items-start ${
             isProjectVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-12"
           }`}
         >
-          <h1 className="text-[74px] leading-20 md:text-nowrap flex-1 font-semibold">
+          <h1 className="text-[32px] md:text-[74px] md:leading-20 md:text-nowrap flex-1 font-semibold">
             Amazing{" "}
             <span className="font-playfair_display italic text-[#1C59FF]">
               Live <br /> Projects
@@ -37,10 +37,10 @@ const Projects = () => {
             we designed <br />& built
           </h1>
           <div className="flex-1">
-            <h1 className="text-[32px] font-semibold text-[#393939]">
+            <h1 className="text-2xl mb-4 md:text-[32px] font-semibold text-[#393939]">
               Industries we’ve worked on
             </h1>
-            <div className="flex items-center  flex-wrap gap-4">
+            <div className="flex items-center flex-wrap gap-4">
               {projects?.map((value, index) => {
                 return (
                   <GSAPHoverButton
@@ -56,7 +56,7 @@ const Projects = () => {
           </div>
         </div>
         <ParallaxCards />
-        <div className=" flex items-center justify-center gap-2">
+        <div className="max-md:mt-20 flex items-center justify-center gap-2">
           <GSAPHoverButton className="bg-[#1C59FF] px-12 py-3 text-white text-lg">
             View all Works
           </GSAPHoverButton>

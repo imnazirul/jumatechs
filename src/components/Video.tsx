@@ -27,13 +27,13 @@ const secondRowLogos = [
 
 function Marquee() {
   return (
-    <div className="relative w-full overflow-hidden py-12">
+    <div className="relative w-full overflow-hidden py-7 md:py-12">
       {/* Animated gradient border container */}
       <div className="relative">
         {/* Animated gradient border */}
 
         {/* Content container with dark background */}
-        <div className="relative rounded-2xl  p-8">
+        <div className="relative rounded-2xl  md:p-8">
           {/* Gradient overlays */}
           <div className="absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#060018] to-transparent pointer-events-none rounded-l-2xl" />
           <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-[#060018] to-transparent pointer-events-none rounded-r-2xl" />
@@ -103,9 +103,9 @@ function Marquee() {
 
 export default function GradientBorderCard() {
   return (
-    <div className="h-screen my-24 w-full max-w-screen-2xl mx-auto ">
+    <div className="h-screen my-12 px-4 md:my-24 w-full max-w-screen-2xl mx-auto ">
       <motion.div
-        className="w-full max-w-screen-2xl h-[700px] p-1 rounded-4xl cursor-pointer transition-all duration-1000 ease-out"
+        className="w-full max-w-screen-2xl h-[200px] md:h-[700px] p-1 rounded-2xl md:rounded-4xl cursor-pointer transition-all duration-1000 ease-out"
         style={{
           background: `conic-gradient(from var(--border-angle, 0deg), rgba(0, 45, 247, 0.00) 0%, #1E1242 10%, #0010F7 20%, #FFF 100%)`,
         }}
@@ -123,7 +123,7 @@ export default function GradientBorderCard() {
       >
         <div
           style={{}}
-          className="overflow-hidden  rounded-4xl text-white/50 bg-neutral-900  h-full border-neutral-800 text-center text-xs"
+          className="overflow-hidden rounded-2xl md:rounded-4xl text-white/50 bg-neutral-900  h-full border-neutral-800 text-center text-xs"
         >
           {/* <Image
             src={"https://images.unsplash.com/photo-1536485255710-1bedfeea2d52?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}

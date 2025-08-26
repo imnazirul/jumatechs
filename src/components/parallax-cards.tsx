@@ -412,18 +412,18 @@ const Card = ({
       className="h-screen flex items-center justify-center sticky top-0"
     >
       <motion.div
-        className="flex flex-col  relative h-[500px] w-full rounded-[25px]  origin-top"
+        className="flex flex-col  relative h-full md:h-[500px] w-full rounded-[25px]  origin-top"
         style={{
           background: color,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
       >
         <div
-          className={`flex h-full items-start justify-between  gap-12 ${
-            i % 2 !== 0 ? "flex-row-reverse" : ""
+          className={`flex h-full flex-col md:flex-row items-start justify-between  gap-12 ${
+            i % 2 !== 0 ? "md:flex-row-reverse" : ""
           }`}
         >
-          <div className="flex-1 p-12 relative top-[10%]">
+          <div className="flex-1 p-4 md:p-12 relative top-[10%]">
             {svgLogo ? (
               <div className="mb-7">{svgLogo}</div>
             ) : (
@@ -435,10 +435,10 @@ const Card = ({
                 className="w-[105px] h-auto object-contain mb-7"
               />
             )}
-            <h2 className="font-semibold text-4xl mb-8">{title}</h2>
-            <h2 className="font-medium text-2xl  mb-8">{subTitle || ""}</h2>
-            <p className="text-lg text-[#161919]">
-              <span className="text-[28px] pr-1">
+            <h2 className="font-semibold text-[28px] md:text-4xl mb-2 md:mb-8">{title}</h2>
+            <h2 className="font-medium text-xl md:text-2xl mb-2 md:mb-8">{subTitle || ""}</h2>
+            <p className="text-sm md:text-lg text-[#161919]">
+              <span className="text-lg md:text-[28px] pr-1">
                 {description.split(" ").slice(0, 1).join(" ")}
               </span>
               {description.split(" ").slice(1).join(" ")}
@@ -446,7 +446,7 @@ const Card = ({
           </div>
 
           <div
-            className={`relative w-3/5 h-full rounded-[25px] overflow-hidden`}
+            className={`relative w-full md:w-3/5 h-full rounded-[25px] overflow-hidden`}
           >
             <motion.div
               className={`w-full h-full`}

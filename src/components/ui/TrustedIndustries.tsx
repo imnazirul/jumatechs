@@ -11,11 +11,11 @@ export default function TrustedCompanies() {
     useIntersectionObserver();
 
   return (
-    <section className="py-16 font-bricolage_grotesque  pt-40 bg-[#060018] relative overflow-hidden">
+    <section className="py-16 font-bricolage_grotesque  md:pt-40 bg-[#060018] relative overflow-hidden">
       {/* Background animated elements */}
       <div
         ref={headerRef}
-        className={`text-center md:mb-16 mb-4 transition-all duration-1000 ease-out ${
+        className={`text-center md:mb-16 mb-4 max-md:hidden transition-all duration-1000 ease-out ${
           headerVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-8"
@@ -28,7 +28,7 @@ export default function TrustedCompanies() {
             "linear-gradient(90deg, rgba(72,115,233,1), rgba(255,255,255,0))",
         }}
       >
-        <p className="text-white absolute left-[50%] border-b border-[#4873E980] translate-x-[-50%] text-[32px] z-50 text-center py-5 w-[557px] mx-auto rounded-[10000px] -mt-10 bg-[#060018]">
+        <p className="text-white absolute left-[50%] border-b border-[#4873E980] translate-x-[-50%] text-sm md:text-[32px] z-50 text-center py-5 max-md:px-4 text-nowrap rounded-[10000px] md:w-[557px] mx-auto md:rounded-[10000px] -mt-10 bg-[#060018]">
           Trusted By Industry Giants
         </p>
         <div
@@ -42,7 +42,7 @@ export default function TrustedCompanies() {
           }}
           className="flex items-center"
         >
-          <div className="flex items-center pt-7 justify-between w-full px-7">
+          <div className="grid md:grid-cols-5 items-center pt-7 justify-between w-full px-7">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="125"

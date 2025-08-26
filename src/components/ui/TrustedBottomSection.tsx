@@ -7,18 +7,11 @@ import Image from "next/image";
 import { AnimatedButton } from "../Navbar/animated-button";
 
 export default function TrustedBottomSection() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-
   const { ref: headerRef, isIntersecting: headerVisible } =
     useIntersectionObserver();
-  const { ref: questionBankRef, isIntersecting: questionBankVisible } =
-    useIntersectionObserver();
-  const { ref: medicalAiRef, isIntersecting: medicalAiVisible } =
-    useIntersectionObserver();
-  const { ref: ctaRef, isIntersecting: ctaVisible } = useIntersectionObserver();
 
   return (
-    <div className="max-w-screen-2xl mt-52 mb-96 mx-auto">
+    <div className="max-w-screen-2xl mt-10 mb-12 dm:mt-52 md:mb-96 mx-auto">
       <motion.div
         className="absolute w-full h-96 rounded-full"
         style={{
@@ -108,7 +101,7 @@ export default function TrustedBottomSection() {
       ))}
       <div
         ref={headerRef}
-        className={`text-center md:mb-16 mb-4 flex items-center justify-between transition-all duration-1000 ease-out ${
+        className={`text-center px-4 md:mb-16 mb-4 flex flex-col  md:items-center justify-between transition-all duration-1000 ease-out ${
           headerVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-8"
@@ -119,23 +112,23 @@ export default function TrustedBottomSection() {
             src={"/images/Group 1597883039.svg"}
             alt="logo"
             width={100}
-            className="size-20 object-cover"
+            className="size-16 md:size-20 object-cover"
             height={100}
           />
           <div>
-            <h1 className="text-white font-semibold text-[28px]">
+            <h1 className="text-white text-left font-semiboldt text-lg md:text-[28px]">
               Jarif Anjum
             </h1>
-            <p className="text-lg font-medium text-[#878DA2]">
+            <p className="text-sm md:text-lg font-medium text-[#878DA2]">
               Founder of Jumatechs
             </p>
           </div>
         </div>
         <div className="max-w-5xl flex flex-col items-start gap-7">
-          <p className="text-white font-medium text-left leading-16 text-5xl">
-            <span className="w-32 inline-block"></span>Jumatechs is a Design first Development company that provides
-            professional IT services for entrepreneurs and companies around the
-            world.
+          <p className="text-white font-medium text-left max-md:mt-7 md:leading-16 text-2xl md:text-5xl">
+            <span className="w-32 hidden md:inline-block"></span>Jumatechs is a Design
+            first Development company that provides professional IT services for
+            entrepreneurs and companies around the world.
           </p>
           <AnimatedButton />
         </div>
