@@ -1,11 +1,11 @@
 "use client";
-
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "../Navbar/animated-button";
 import FloatingOrbsBackground from "./floating-orbs-background";
+import { useIsMobile } from "@/helpers/use-mobile";
 
 export default function HeroSectionFramer() {
+  const isMobile = useIsMobile();
   const splitTextIntoWords = (text: string) => {
     return text.split(" ").map((word, index) => (
       <motion.span
@@ -26,109 +26,113 @@ export default function HeroSectionFramer() {
   };
 
   // Background gradient animation variants
-  // const backgroundVariants = {
-  //   animate: {
-  //     background: [
-  //       "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
-  //       "linear-gradient(135deg, #1C59FF 15%, #1C59FF 15%, #1C59FF 20%, #1C59FF 25%, #1C59FF00 30%)",
-  //       "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
-  //     ],
-  //     transition: {
-  //       duration: 8,
-  //       repeat: Number.POSITIVE_INFINITY,
-  //       repeatType: "reverse",
-  //       ease: "easeInOut",
-  //     },
-  //   },
-  // };
+  const backgroundVariants = {
+    animate: {
+      background: [
+        "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
+        "linear-gradient(135deg, #1C59FF 15%, #1C59FF 15%, #1C59FF 20%, #1C59FF 25%, #1C59FF00 30%)",
+        "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
+      ],
+      transition: {
+        duration: 8,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
 
-  // // Floating orb animations
-  // const orb1Variants = {
-  //   animate: {
-  //     x: [0, 100, 0],
-  //     y: [0, -50, 0],
-  //     scale: [1, 1.2, 1],
-  //     transition: {
-  //       duration: 6,
-  //       repeat: Number.POSITIVE_INFINITY,
-  //       repeatType: "reverse",
-  //       ease: "easeInOut",
-  //     },
-  //   },
-  // };
+  // Floating orb animations
+  const orb1Variants = {
+    animate: {
+      x: [0, 100, 0],
+      y: [0, -50, 0],
+      scale: [1, 1.2, 1],
+      transition: {
+        duration: 6,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
 
-  // const orb2Variants = {
-  //   animate: {
-  //     x: [0, -80, 0],
-  //     y: [0, 60, 0],
-  //     scale: [1, 0.8, 1],
-  //     transition: {
-  //       duration: 8,
-  //       repeat: Number.POSITIVE_INFINITY,
-  //       repeatType: "reverse",
-  //       ease: "easeInOut",
-  //       delay: 1,
-  //     },
-  //   },
-  // };
+  const orb2Variants = {
+    animate: {
+      x: [0, -80, 0],
+      y: [0, 60, 0],
+      scale: [1, 0.8, 1],
+      transition: {
+        duration: 8,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+        delay: 1,
+      },
+    },
+  };
 
-  // // Text glow animation
-  // const textGlowVariants = {
-  //   animate: {
-  //     textShadow: [
-  //       "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
-  //       "0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)",
-  //       "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
-  //     ],
-  //     transition: {
-  //       duration: 3,
-  //       repeat: Number.POSITIVE_INFINITY,
-  //       repeatType: "reverse",
-  //       ease: "easeInOut",
-  //     },
-  //   },
-  // };
+  // Text glow animation
+  const textGlowVariants = {
+    animate: {
+      textShadow: [
+        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+        "0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)",
+        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+      ],
+      transition: {
+        duration: 3,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
 
-  // // Illustration floating animation
-  // const illustrationFloatVariants = {
-  //   animate: {
-  //     y: [0, -20, 0],
-  //     transition: {
-  //       duration: 4,
-  //       repeat: Number.POSITIVE_INFINITY,
-  //       repeatType: "reverse",
-  //       ease: "easeInOut",
-  //       delay: 2,
-  //     },
-  //   },
-  // };
+  // Illustration floating animation
+  const illustrationFloatVariants = {
+    animate: {
+      y: [0, -20, 0],
+      transition: {
+        duration: 4,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        ease: "easeInOut",
+        delay: 2,
+      },
+    },
+  };
 
   return (
     <div className="bg-[url('/images/Firefly-20250808011206.svg')] min-h-[100vh] bg-cover bg-left md:bg-center bg-no-repeat">
       <div className="relative min-h-screen overflow-hidden">
         {/* Animated Background */}
-        {/* <motion.div
-          className="absolute max-md:hidden inset-0 bg-gradient-to-br from-indigo-100 via-purple-50 to-purple-200"
-          variants={backgroundVariants as any}
-          animate="animate"
-        />
-
-         Floating Glow Orbs 
-        <motion.div
-          className="absolute max-md:hidden top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30"
-          initial={{ opacity: 0.6 }}
-          variants={orb1Variants as any}
-          animate="animate"
-        />
-        <motion.div
-          className="absolute max-md:hidden bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40"
-          initial={{ opacity: 0.6 }}
-          variants={orb2Variants as any}
-          animate="animate"
-        /> */}
-        <div className="md:hidden">
-          <FloatingOrbsBackground />
-        </div>
+        {!isMobile ? (
+          <>
+            <motion.div
+              className="absolute max-md:hidden inset-0 bg-gradient-to-br from-indigo-100 via-purple-50 to-purple-200"
+              variants={backgroundVariants as any}
+              animate="animate"
+            />
+            {/* Floating Glow Orbs */}
+            <motion.div
+              className="absolute max-md:hidden top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30"
+              initial={{ opacity: 0.6 }}
+              variants={orb1Variants as any}
+              animate="animate"
+            />
+            <motion.div
+              className="absolute max-md:hidden bottom-20 right-20 w-48 h-48 bg-blue-700 rounded-full blur-3xl opacity-40"
+              initial={{ opacity: 0.6 }}
+              variants={orb2Variants as any}
+              animate="animate"
+            />{" "}
+          </>
+        ) : (
+          <div className="md:hidden">
+            <FloatingOrbsBackground />
+          </div>
+        )}
 
         {/* Main Content */}
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 py-10 mt-16">
@@ -152,7 +156,7 @@ export default function HeroSectionFramer() {
               {/* Main Heading */}
               <motion.h1
                 className="text-[40px] md:text-5xl lg:text-7xl font-bold text-[#060018] leading-tight"
-                // variants={textGlowVariants as any}
+                variants={textGlowVariants as any}
                 animate="animate"
               >
                 {splitTextIntoWords(
@@ -250,35 +254,37 @@ export default function HeroSectionFramer() {
             </div>
 
             {/* Right Illustration */}
-            <motion.div
-              className="relative hidden lg:block"
-              initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-              // variants={illustrationFloatVariants as any}
-            >
-              <div className="relative w-full max-w-lg mx-auto">
-                {/* 3D Blue Geometric Shape */}
-                <div className="relative">
-                  <div className="w-80 h-80 mx-auto relative">
-                    {/* Main 3D blocks */}
-                    {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl transform rotate-12 shadow-2xl" />
+            {!isMobile && (
+              <motion.div
+                className="relative hidden lg:block"
+                initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+                variants={illustrationFloatVariants as any}
+              >
+                <div className="relative w-full max-w-lg mx-auto">
+                  {/* 3D Blue Geometric Shape */}
+                  <div className="relative">
+                    <div className="w-80 h-80 mx-auto relative">
+                      {/* Main 3D blocks */}
+                      {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl transform rotate-12 shadow-2xl" />
                     <div className="absolute inset-2 bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl transform -rotate-6 shadow-xl" />
                     <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl shadow-lg" /> */}
 
-                    {/* Accent elements */}
-                    <div className="absolute top-8 right-8 w-6 h-6 bg-yellow-400 rounded-full shadow-lg" />
-                    <div className="absolute bottom-12 left-12 w-4 h-16 bg-white/20 rounded-full backdrop-blur-sm" />
-                    <div className="absolute top-1/2 left-8 w-2 h-8 bg-white/30 rounded-full backdrop-blur-sm" />
+                      {/* Accent elements */}
+                      <div className="absolute top-8 right-8 w-6 h-6 bg-yellow-400 rounded-full shadow-lg" />
+                      <div className="absolute bottom-12 left-12 w-4 h-16 bg-white/20 rounded-full backdrop-blur-sm" />
+                      <div className="absolute top-1/2 left-8 w-2 h-8 bg-white/30 rounded-full backdrop-blur-sm" />
+                    </div>
                   </div>
-                </div>
 
-                {/* Floating particles */}
-                <div className="absolute -top-4 -right-4 w-3 h-3 bg-purple-400 rounded-full animate-bounce" />
-                <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                <div className="absolute top-1/3 -right-8 w-4 h-4 bg-pink-400 rounded-full animate-ping" />
-              </div>
-            </motion.div>
+                  {/* Floating particles */}
+                  <div className="absolute -top-4 -right-4 w-3 h-3 bg-purple-400 rounded-full animate-bounce" />
+                  <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                  <div className="absolute top-1/3 -right-8 w-4 h-4 bg-pink-400 rounded-full animate-ping" />
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </div>
