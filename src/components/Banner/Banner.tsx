@@ -4,6 +4,7 @@ import { AnimatedButton } from "../Navbar/animated-button";
 import FloatingOrbsBackground from "./floating-orbs-background";
 import { useIsMobile } from "@/helpers/use-mobile";
 import FloatingOrbsBackgroundLG from "./floating-orbs-background copy";
+import Logo from "./Logo";
 
 export default function HeroSectionFramer() {
   const isMobile = useIsMobile();
@@ -105,7 +106,7 @@ export default function HeroSectionFramer() {
   // };
 
   return (
-    <div className="bg-[url('/images/Firefly-20250808011206.svg')] min-h-[100vh] bg-cover bg-left md:bg-center bg-no-repeat">
+    <div className="bg-[url('/images/Fireflynew.svg')] min-h-[100vh] bg-cover bg-left md:bg-center bg-no-repeat">
       <div className="relative min-h-screen overflow-hidden">
         {/* Animated Background */}
         {!isMobile ? (
@@ -242,30 +243,28 @@ export default function HeroSectionFramer() {
               <motion.div
                 className="relative hidden lg:block"
                 initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
-                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                animate={{ opacity: 1, scale: 1.7, rotateY: 0 }}
                 transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
                 // variants={illustrationFloatVariants as any}
               >
                 <div className="relative w-full max-w-lg mx-auto">
                   {/* 3D Blue Geometric Shape */}
-                  <div className="relative">
-                    <div className="w-80 h-80 mx-auto relative">
+                  <div className="relative flex items-center justify-center">
+                    <div className="size-[700px] mx-auto relative">
                       {/* Main 3D blocks */}
-                      {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl transform rotate-12 shadow-2xl" />
-                    <div className="absolute inset-2 bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl transform -rotate-6 shadow-xl" />
-                    <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl shadow-lg" /> */}
+                      <Logo />
 
                       {/* Accent elements */}
-                      <div className="absolute top-8 right-8 w-6 h-6 bg-yellow-400 rounded-full shadow-lg" />
-                      <div className="absolute bottom-12 left-12 w-4 h-16 bg-white/20 rounded-full backdrop-blur-sm" />
+                      <div className="absolute top-8 right-8 w-6 h-6 bg-blue-400 rounded-full shadow-lg" />
+                      <div className="absolute bottom-24 left-12 w-4 h-16 bg-blue-700/20 rounded-full backdrop-blur-sm" />
                       <div className="absolute top-1/2 left-8 w-2 h-8 bg-white/30 rounded-full backdrop-blur-sm" />
                     </div>
                   </div>
 
                   {/* Floating particles */}
-                  <div className="absolute -top-4 -right-4 w-3 h-3 bg-purple-400 rounded-full animate-bounce" />
+                  <div className="absolute -top-4 -right-4 w-3 h-3 bg-blue-400 rounded-full animate-bounce" />
                   <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                  <div className="absolute top-1/3 -right-8 w-4 h-4 bg-pink-400 rounded-full animate-ping" />
+                  <div className="absolute top-1/3 right-8 w-4 h-4 bg-blue-400 rounded-full animate-ping" />
                 </div>
               </motion.div>
             )}
