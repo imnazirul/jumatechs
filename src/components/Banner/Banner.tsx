@@ -26,94 +26,94 @@ export default function HeroSectionFramer() {
   };
 
   // Background gradient animation variants
-  const backgroundVariants = {
-    animate: {
-      background: [
-        "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
-        "linear-gradient(135deg, #1C59FF 15%, #1C59FF 15%, #1C59FF 20%, #1C59FF 25%, #1C59FF00 30%)",
-        "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
-      ],
-      transition: {
-        duration: 8,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
+  // const backgroundVariants = {
+  //   animate: {
+  //     background: [
+  //       "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
+  //       "linear-gradient(135deg, #1C59FF 15%, #1C59FF 15%, #1C59FF 20%, #1C59FF 25%, #1C59FF00 30%)",
+  //       "linear-gradient(135deg, #1C59FF 10%, #1C59FF 10%, #1C59FF 15%, #1C59FF 20%, #1C59FF00 25%)",
+  //     ],
+  //     transition: {
+  //       duration: 8,
+  //       repeat: Number.POSITIVE_INFINITY,
+  //       repeatType: "reverse",
+  //       ease: "easeInOut",
+  //     },
+  //   },
+  // };
 
-  // Floating orb animations
-  const orb1Variants = {
-    animate: {
-      x: [0, 100, 0],
-      y: [0, -50, 0],
-      scale: [1, 1.2, 1],
-      transition: {
-        duration: 6,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
+  // // Floating orb animations
+  // const orb1Variants = {
+  //   animate: {
+  //     x: [0, 100, 0],
+  //     y: [0, -50, 0],
+  //     scale: [1, 1.2, 1],
+  //     transition: {
+  //       duration: 6,
+  //       repeat: Number.POSITIVE_INFINITY,
+  //       repeatType: "reverse",
+  //       ease: "easeInOut",
+  //     },
+  //   },
+  // };
 
-  const orb2Variants = {
-    animate: {
-      x: [0, -80, 0],
-      y: [0, 60, 0],
-      scale: [1, 0.8, 1],
-      transition: {
-        duration: 8,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
-        delay: 1,
-      },
-    },
-  };
+  // const orb2Variants = {
+  //   animate: {
+  //     x: [0, -80, 0],
+  //     y: [0, 60, 0],
+  //     scale: [1, 0.8, 1],
+  //     transition: {
+  //       duration: 8,
+  //       repeat: Number.POSITIVE_INFINITY,
+  //       repeatType: "reverse",
+  //       ease: "easeInOut",
+  //       delay: 1,
+  //     },
+  //   },
+  // };
 
-  // Text glow animation
-  const textGlowVariants = {
-    animate: {
-      textShadow: [
-        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
-        "0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)",
-        "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
-      ],
-      transition: {
-        duration: 3,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
+  // // Text glow animation
+  // const textGlowVariants = {
+  //   animate: {
+  //     textShadow: [
+  //       "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+  //       "0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)",
+  //       "0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)",
+  //     ],
+  //     transition: {
+  //       duration: 3,
+  //       repeat: Number.POSITIVE_INFINITY,
+  //       repeatType: "reverse",
+  //       ease: "easeInOut",
+  //     },
+  //   },
+  // };
 
-  // Illustration floating animation
-  const illustrationFloatVariants = {
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 4,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
-        delay: 2,
-      },
-    },
-  };
+  // // Illustration floating animation
+  // const illustrationFloatVariants = {
+  //   animate: {
+  //     y: [0, -20, 0],
+  //     transition: {
+  //       duration: 4,
+  //       repeat: Number.POSITIVE_INFINITY,
+  //       repeatType: "reverse",
+  //       ease: "easeInOut",
+  //       delay: 2,
+  //     },
+  //   },
+  // };
 
   return (
     <div className="bg-[url('/images/Firefly-20250808011206.svg')] min-h-[100vh] bg-cover bg-left md:bg-center bg-no-repeat">
       <div className="relative min-h-screen overflow-hidden">
         {/* Animated Background */}
-        <motion.div
+        {/* <motion.div
           className="absolute max-md:hidden inset-0 bg-gradient-to-br from-indigo-100 via-purple-50 to-purple-200"
           variants={backgroundVariants as any}
           animate="animate"
         />
 
-        {/* Floating Glow Orbs */}
+         Floating Glow Orbs 
         <motion.div
           className="absolute max-md:hidden top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-30"
           initial={{ opacity: 0.6 }}
@@ -125,7 +125,7 @@ export default function HeroSectionFramer() {
           initial={{ opacity: 0.6 }}
           variants={orb2Variants as any}
           animate="animate"
-        />
+        /> */}
         <div className="md:hidden">
           <FloatingOrbsBackground />
         </div>
@@ -152,7 +152,7 @@ export default function HeroSectionFramer() {
               {/* Main Heading */}
               <motion.h1
                 className="text-[40px] md:text-5xl lg:text-7xl font-bold text-[#060018] leading-tight"
-                variants={textGlowVariants as any}
+                // variants={textGlowVariants as any}
                 animate="animate"
               >
                 {splitTextIntoWords(
@@ -255,7 +255,7 @@ export default function HeroSectionFramer() {
               initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-              variants={illustrationFloatVariants as any}
+              // variants={illustrationFloatVariants as any}
             >
               <div className="relative w-full max-w-lg mx-auto">
                 {/* 3D Blue Geometric Shape */}

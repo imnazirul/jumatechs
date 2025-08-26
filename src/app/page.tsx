@@ -31,7 +31,7 @@ const Page = () => {
     <div className="font-bricolage_grotesque mb-40">
       {/* <PreloaderOverlay /> */}
       <Navbar />
-      {/* <Banner /> */}
+      <Banner />
       <TrustedIndustries />
       <Projects />
       <GradientBorderCard />
