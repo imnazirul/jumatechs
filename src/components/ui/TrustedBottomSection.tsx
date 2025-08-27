@@ -11,7 +11,7 @@ export default function TrustedBottomSection() {
     useIntersectionObserver();
 
   return (
-    <div className="max-w-screen-2xl mt-10 mb-12 dm:mt-52 md:mb-96 mx-auto">
+    <div className="max-w-screen-2xl mt-10 mb-12 md:mt-52 md:mb-96 mx-auto">
       <motion.div
         className="absolute w-full h-96 rounded-full"
         style={{
@@ -101,7 +101,7 @@ export default function TrustedBottomSection() {
       ))}
       <div
         ref={headerRef}
-        className={`text-center px-4 md:mb-16 mb-4 flex flex-col  md:items-center justify-between transition-all duration-1000 ease-out ${
+        className={`text-center px-4 md:mb-16 mb-4 flex flex-col md:flex-row  md:items-center justify-between transition-all duration-1000 ease-out ${
           headerVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-8"

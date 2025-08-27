@@ -3,6 +3,7 @@ import AwesomeLoader from "@/components/Banner/awesome-loader";
 import Banner from "@/components/Banner/Banner";
 import PreloaderOverlay from "@/components/Loader/PreloaderOverlay";
 import Navbar from "@/components/Navbar/Navbar";
+import OfferAndGetStarted from "@/components/OfferAndGetStarted";
 import Projects from "@/components/Projects";
 import GSAPHoverButton from "@/components/ui/gsap-hover-button";
 import SmoothScroll from "@/components/ui/smooth-scroll.tsx";
@@ -29,18 +30,12 @@ const Page = () => {
 
   return (
     <div className="font-bricolage_grotesque mb-40">
-      {/* <PreloaderOverlay /> */}
       <Navbar />
       <Banner />
       <TrustedIndustries />
       <Projects />
       <GradientBorderCard />
-      {/* <GSAPHoverButton
-        className="bg-white text-black px-7 py-3 border-black hover:text-black"
-        onClick={() => console.log("Custom button clicked")}
-      >
-        Custom Style Button
-      </GSAPHoverButton> */}
+      <OfferAndGetStarted />
     </div>
   );
 };

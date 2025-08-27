@@ -250,8 +250,10 @@ export default function HeroSectionFramer() {
                 <div className="relative w-full max-w-lg mx-auto">
                   {/* 3D Blue Geometric Shape */}
                   <div className="relative flex items-center justify-center">
+                    <FloatingOrbsBackground />
                     <div className="size-[700px] mx-auto relative">
                       {/* Main 3D blocks */}
+
                       <Logo />
 
                       {/* Accent elements */}
