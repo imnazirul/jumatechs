@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       "images.squarespace-cdn.com",
       "balanzifyapi.jumatechs.xyz",
       "plaid-merchant-logos.plaid.com",
-      "145.223.75.199",
+      "i.ibb.co.com",
       "i.pinimg.com",
       "payroll.jumatechs.xyz",
       "ideas.darden.virginia.edu",

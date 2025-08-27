@@ -25,6 +25,7 @@ const CardButton = ({
           duration: 5,
           repeat: Number.POSITIVE_INFINITY,
         }}
+
         // whileHover={{
         //   scale: 1.03,
         // }}
@@ -58,7 +59,8 @@ export default function PromisingService() {
       <motion.div
         className="relative max-w-screen-2xl w-full"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        // animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         {/* Animated Border Container */}
@@ -101,8 +103,8 @@ export default function PromisingService() {
                 fill="none"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M4.66142 11.9999L0 9.30643L3.43573 3.35755L8.09987 6.04637L8.1025 0.664062H14.974L14.9767 6.04637L19.6408 3.35755L23.0765 9.30643L18.4151 11.9999L23.0765 14.6934L19.6408 20.6423L14.9767 17.9535L14.974 23.3358H8.1025L8.09987 17.9535L3.43573 20.6423L0 14.6934L4.66142 11.9999Z"
                   fill="url(#paint0_linear_2284_18967)"
                 />
@@ -115,8 +117,8 @@ export default function PromisingService() {
                     y2="11.3175"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#7C99EA" />
-                    <stop offset="1" stop-color="white" />
+                    <stop stopColor="#7C99EA" />
+                    <stop offset="1" stopColor="white" />
                   </linearGradient>
                 </defs>
               </svg>

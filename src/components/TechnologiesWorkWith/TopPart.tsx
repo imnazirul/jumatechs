@@ -2,19 +2,53 @@
 
 import { cn } from "@/helpers/utils";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { technologies } from "./Stack";
+import { useIntersectionObserver } from "@/helpers/use-intersection-observer";
 
 const categories = Object.keys(technologies);
 
 export default function TechShowcase() {
   const [activeCategory, setActiveCategory] = useState("Frontend");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const { ref, isIntersecting } = useIntersectionObserver();
   const [isHeadingTransitioning, setIsHeadingTransitioning] = useState(false);
+  const [isAutoLooping, setIsAutoLooping] = useState(true);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (!isAutoLooping) return;
+
+    intervalRef.current = setInterval(() => {
+      const currentIndex = categories.indexOf(activeCategory);
+      const nextIndex = (currentIndex + 1) % categories.length;
+      const nextCategory = categories[nextIndex];
+
+      setIsHeadingTransitioning(true);
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        setActiveCategory(nextCategory);
+        setIsTransitioning(false);
+        setTimeout(() => {
+          setIsHeadingTransitioning(false);
+        }, 50);
+      }, 200);
+    }, 4000); // Change category every 3 seconds
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [activeCategory, isAutoLooping]);
 
   const handleCategoryChange = (category: string) => {
     if (category === activeCategory) return;
-
+    setIsAutoLooping(false);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     setIsHeadingTransitioning(true);
     setIsTransitioning(true);
 
@@ -23,13 +57,23 @@ export default function TechShowcase() {
       setIsTransitioning(false);
       setTimeout(() => {
         setIsHeadingTransitioning(false);
+        setTimeout(() => {
+          setIsAutoLooping(true);
+        }, 5000);
       }, 50);
     }, 200);
   };
 
   return (
-    <div className=" py-7">
-      <div className="w-full flex gap-3 mx-auto">
+    <div
+      ref={ref}
+      className={`py-7 ${
+        isIntersecting
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
+      <div className={`w-full flex gap-3 mx-auto  `}>
         {/* Header */}
         <div className="flex-1">
           <div className="text-center mb-12">
@@ -85,7 +129,7 @@ export default function TechShowcase() {
             {/* Current Technologies */}
             <div
               className={cn(
-                "flex items-start  flex-wrap gap-3 transition-all duration-300 ease-in-out",
+                "flex items-start  flex-wrap gap-5 transition-all duration-300 ease-in-out",
                 isTransitioning
                   ? "opacity-0 translate-y-4 scale-95"
                   : "opacity-100 translate-y-0 scale-100"
@@ -95,7 +139,7 @@ export default function TechShowcase() {
                 <div
                   key={`${activeCategory}-${index}`}
                   className={cn(
-                    "flex items-center px-7  bg-white py-2.5 gap-2 rounded-xl transition-all duration-200 hover:scale-105",
+                    "flex items-center px-4  bg-white py-2 gap-2 rounded-xl transition-all duration-200 hover:scale-105",
                     isTransitioning
                       ? "animate-pulse opacity-50"
                       : "animate-in fade-in slide-in-from-bottom-2 duration-300"
@@ -106,7 +150,7 @@ export default function TechShowcase() {
                   }}
                 >
                   <div>{tech.icon}</div>
-                  <p className="text-2xl  font-bricolage_grotesque font-medium text-[#1C2335]">
+                  <p className="text-xl  font-bricolage_grotesque font-medium text-[#1C2335]">
                     {tech.name}
                   </p>
                 </div>

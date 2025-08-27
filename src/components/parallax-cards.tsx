@@ -107,7 +107,7 @@ export const projects = [
         viewBox="0 0 135 34"
         fill="none"
       >
-        <g clip-path="url(#clip0_2632_10815)">
+        <g clipPath="url(#clip0_2632_10815)">
           <path
             d="M30.2498 9.43074V24.4799C30.2498 25.1609 29.8875 25.7931 29.299 26.1329L25.2951 28.4574V11.2029L25.2305 11.1677L29.9952 8.479C30.1595 8.76602 30.2498 9.09229 30.2498 9.43074Z"
             fill="url(#paint0_linear_2632_10815)"
@@ -177,9 +177,9 @@ export const projects = [
             y2="9.55336"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="1.29393e-07" stop-color="#F10DB1" />
-            <stop offset="0.5065" stop-color="#7D56F0" />
-            <stop offset="1" stop-color="#28C4B4" />
+            <stop offset="1.29393e-07" stopColor="#F10DB1" />
+            <stop offset="0.5065" stopColor="#7D56F0" />
+            <stop offset="1" stopColor="#28C4B4" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_2632_10815"
@@ -189,9 +189,9 @@ export const projects = [
             y2="10.5771"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="1.29393e-07" stop-color="#F10DB1" />
-            <stop offset="0.5065" stop-color="#7D56F0" />
-            <stop offset="1" stop-color="#28C4B4" />
+            <stop offset="1.29393e-07" stopColor="#F10DB1" />
+            <stop offset="0.5065" stopColor="#7D56F0" />
+            <stop offset="1" stopColor="#28C4B4" />
           </linearGradient>
           <linearGradient
             id="paint2_linear_2632_10815"
@@ -201,8 +201,8 @@ export const projects = [
             y2="29.1836"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="2.49201e-07" stop-color="#FBA7F4" />
-            <stop offset="1" stop-color="#B2E0FE" />
+            <stop offset="2.49201e-07" stopColor="#FBA7F4" />
+            <stop offset="1" stopColor="#B2E0FE" />
           </linearGradient>
           <linearGradient
             id="paint3_linear_2632_10815"
@@ -212,9 +212,9 @@ export const projects = [
             y2="14.495"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="3.78594e-07" stop-color="#4CB4B7" />
-            <stop offset="0.5065" stop-color="#47E29B" />
-            <stop offset="1" stop-color="#B6D47F" />
+            <stop offset="3.78594e-07" stopColor="#4CB4B7" />
+            <stop offset="0.5065" stopColor="#47E29B" />
+            <stop offset="1" stopColor="#B6D47F" />
           </linearGradient>
           <linearGradient
             id="paint4_linear_2632_10815"
@@ -224,9 +224,9 @@ export const projects = [
             y2="25.9322"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="3.78594e-07" stop-color="#4CB4B7" />
-            <stop offset="0.5065" stop-color="#47E29B" />
-            <stop offset="1" stop-color="#B6D47F" />
+            <stop offset="3.78594e-07" stopColor="#4CB4B7" />
+            <stop offset="0.5065" stopColor="#47E29B" />
+            <stop offset="1" stopColor="#B6D47F" />
           </linearGradient>
           <linearGradient
             id="paint5_linear_2632_10815"
@@ -236,9 +236,9 @@ export const projects = [
             y2="31.3057"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#9FE7C1" />
-            <stop offset="0.5065" stop-color="#C8E3BC" />
-            <stop offset="1" stop-color="#E4DFAF" />
+            <stop stopColor="#9FE7C1" />
+            <stop offset="0.5065" stopColor="#C8E3BC" />
+            <stop offset="1" stopColor="#E4DFAF" />
           </linearGradient>
           <linearGradient
             id="paint6_linear_2632_10815"
@@ -248,9 +248,9 @@ export const projects = [
             y2="16.8937"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="1.29393e-07" stop-color="#F10DB1" />
-            <stop offset="0.5065" stop-color="#7D56F0" />
-            <stop offset="1" stop-color="#28C4B4" />
+            <stop offset="1.29393e-07" stopColor="#F10DB1" />
+            <stop offset="0.5065" stopColor="#7D56F0" />
+            <stop offset="1" stopColor="#28C4B4" />
           </linearGradient>
           <linearGradient
             id="paint7_linear_2632_10815"
@@ -260,9 +260,9 @@ export const projects = [
             y2="14.8288"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="1.29393e-07" stop-color="#F10DB1" />
-            <stop offset="0.5065" stop-color="#7D56F0" />
-            <stop offset="1" stop-color="#28C4B4" />
+            <stop offset="1.29393e-07" stopColor="#F10DB1" />
+            <stop offset="0.5065" stopColor="#7D56F0" />
+            <stop offset="1" stopColor="#28C4B4" />
           </linearGradient>
           <linearGradient
             id="paint8_linear_2632_10815"
@@ -272,8 +272,8 @@ export const projects = [
             y2="34.8114"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="2.49201e-07" stop-color="#FBC1EE" />
-            <stop offset="1" stop-color="#CCE3FE" />
+            <stop offset="2.49201e-07" stopColor="#FBC1EE" />
+            <stop offset="1" stopColor="#CCE3FE" />
           </linearGradient>
           <clipPath id="clip0_2632_10815">
             <rect width="135" height="34" fill="white" />
