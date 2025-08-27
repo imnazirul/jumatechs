@@ -1,7 +1,5 @@
 "use client";
-
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const logos = [
   // First row logos
@@ -30,28 +28,18 @@ function Marquee() {
     <div className="relative w-full overflow-hidden py-7 md:py-12">
       {/* Animated gradient border container */}
       <div className="relative">
-        {/* Animated gradient border */}
-
         {/* Content container with dark background */}
-        <div className="relative rounded-2xl  md:p-8">
+        <div className="relative rounded-2xl md:p-8">
           {/* Gradient overlays */}
           <div className="absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#060018] to-transparent pointer-events-none rounded-l-2xl" />
           <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-[#060018] to-transparent pointer-events-none rounded-r-2xl" />
 
           {/* First row - moving left to right */}
           <div className="mb-8">
-            <motion.div
+            <div
               className="flex gap-12 whitespace-nowrap"
-              animate={{
-                x: ["-100%", "0%"],
-              }}
-              transition={{
-                x: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "loop",
-                  duration: 30,
-                  ease: "linear",
-                },
+              style={{
+                animation: "marqueeLeftToRight 30s linear infinite",
               }}
             >
               {/* Duplicate the logos array to create seamless loop */}
@@ -63,23 +51,15 @@ function Marquee() {
                   {logo.text}
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Second row - moving right to left */}
           <div>
-            <motion.div
+            <div
               className="flex gap-12 whitespace-nowrap"
-              animate={{
-                x: ["0%", "-100%"],
-              }}
-              transition={{
-                x: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "loop",
-                  duration: 35,
-                  ease: "linear",
-                },
+              style={{
+                animation: "marqueeRightToLeft 35s linear infinite",
               }}
             >
               {/* Duplicate the logos array to create seamless loop */}
@@ -93,10 +73,30 @@ function Marquee() {
                   </div>
                 )
               )}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes marqueeLeftToRight {
+          from {
+            transform: translateX(-100%);
+          }
+          to {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes marqueeRightToLeft {
+          from {
+            transform: translateX(0%);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
     </div>
   );
 }

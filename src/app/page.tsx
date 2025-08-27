@@ -5,6 +5,8 @@ import PreloaderOverlay from "@/components/Loader/PreloaderOverlay";
 import Navbar from "@/components/Navbar/Navbar";
 import OfferAndGetStarted from "@/components/OfferAndGetStarted";
 import Projects from "@/components/Projects";
+import PromisingService from "@/components/PromisingService";
+import Technologies from "@/components/TechnologiesWorkWith/Technologies";
 import GSAPHoverButton from "@/components/ui/gsap-hover-button";
 import SmoothScroll from "@/components/ui/smooth-scroll.tsx";
 import TrustedIndustries from "@/components/ui/TrustedIndustries";
@@ -36,6 +38,8 @@ const Page = () => {
       <Projects />
       <GradientBorderCard />
       <OfferAndGetStarted />
+      <PromisingService />
+      <Technologies />
     </div>
   );
 };
