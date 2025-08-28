@@ -103,12 +103,12 @@ const Logo = () => {
               .cls-1{fill:url(#linear-gradient-15);}
               .cls-2{fill:url(#linear-gradient-8);stroke:url(#linear-gradient-9);}
               .cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{stroke-miterlimit:10;}
-              .cls-2,.cls-3,.cls-4,.cls-6,.cls-7{stroke-width:2px;}
+              .cls-2,.cls-3,.cls-4,.cls-6,.cls-7{strokeWidth:2px;}
               .cls-8{fill:url(#linear-gradient-10);}
               .cls-9{fill:url(#linear-gradient-5);}
               .cls-3{fill:url(#linear-gradient-13);stroke:url(#linear-gradient-14);}
               .cls-4{fill:url(#linear-gradient-3);stroke:url(#linear-gradient-4);}
-              .cls-5{fill:url(#linear-gradient-11);stroke:url(#linear-gradient-12);stroke-width:3px;}
+              .cls-5{fill:url(#linear-gradient-11);stroke:url(#linear-gradient-12);strokeWidth:3px;}
               .cls-6{fill:url(#linear-gradient);stroke:url(#linear-gradient-2);}
               .cls-7{fill:url(#linear-gradient-6);stroke:url(#linear-gradient-7);}
             `}

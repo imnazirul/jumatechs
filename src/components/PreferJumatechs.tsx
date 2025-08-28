@@ -145,20 +145,20 @@ function ComparisonCard() {
                             viewBox="0 0 14 15"
                             fill="none"
                           >
-                            <g clip-path="url(#clip0_2284_19985)">
+                            <g clipPath="url(#clip0_2284_19985)">
                               <path
                                 d="M2.33105 3.19727L11.5717 12.4379"
                                 stroke="#EFEFEF"
-                                stroke-width="2.7722"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="2.7722"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                               />
                               <path
                                 d="M2.33105 12.4379L11.5717 3.19727"
                                 stroke="#EFEFEF"
-                                stroke-width="2.7722"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="2.7722"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                               />
                             </g>
                             <defs>
@@ -278,13 +278,13 @@ function ComparisonCard() {
                             viewBox="0 0 15 15"
                             fill="none"
                           >
-                            <g clip-path="url(#clip0_2284_20030)">
+                            <g clipPath="url(#clip0_2284_20030)">
                               <path
                                 d="M12.7683 3.97656L5.36642 11.343L2.00195 7.99461"
                                 stroke="white"
-                                stroke-width="2.71991"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="2.71991"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                               />
                             </g>
                             <defs>

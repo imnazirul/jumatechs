@@ -1,6 +1,7 @@
 "use client";
 import AwesomeLoader from "@/components/Banner/awesome-loader";
 import Banner from "@/components/Banner/Banner";
+import LetsTalkSection from "@/components/LetsTalkSection";
 import PreloaderOverlay from "@/components/Loader/PreloaderOverlay";
 import Navbar from "@/components/Navbar/Navbar";
 import OfferAndGetStarted from "@/components/OfferAndGetStarted";
@@ -42,6 +43,7 @@ const Page = () => {
       <PromisingService />
       <Technologies />
       <PreferJumatechs />
+      <LetsTalkSection />
     </div>
   );
 };

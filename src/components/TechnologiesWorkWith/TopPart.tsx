@@ -18,7 +18,7 @@ export default function TechShowcase() {
 
   useEffect(() => {
     if (!isAutoLooping) return;
-
+    if (!isIntersecting) return;
     intervalRef.current = setInterval(() => {
       const currentIndex = categories.indexOf(activeCategory);
       const nextIndex = (currentIndex + 1) % categories.length;
@@ -41,7 +41,7 @@ export default function TechShowcase() {
         clearInterval(intervalRef.current);
       }
     };
-  }, [activeCategory, isAutoLooping]);
+  }, [activeCategory, isAutoLooping, isIntersecting]);
 
   const handleCategoryChange = (category: string) => {
     if (category === activeCategory) return;

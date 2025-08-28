@@ -13,7 +13,8 @@ const nextConfig: NextConfig = {
       "ideas.darden.virginia.edu",
       "media.discordapp.net",
       'images.unsplash.com',
-      'mir-s3-cdn-cf.behance.net'
+      'mir-s3-cdn-cf.behance.net',
+      'blob.vercel-storage.com'
     ],
   },
 };
