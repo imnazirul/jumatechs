@@ -4,6 +4,7 @@ import Banner from "@/components/Banner/Banner";
 import PreloaderOverlay from "@/components/Loader/PreloaderOverlay";
 import Navbar from "@/components/Navbar/Navbar";
 import OfferAndGetStarted from "@/components/OfferAndGetStarted";
+import PreferJumatechs from "@/components/PreferJumatechs";
 import Projects from "@/components/Projects";
 import PromisingService from "@/components/PromisingService";
 import Technologies from "@/components/TechnologiesWorkWith/Technologies";
@@ -40,6 +41,7 @@ const Page = () => {
       <OfferAndGetStarted />
       <PromisingService />
       <Technologies />
+      <PreferJumatechs />
     </div>
   );
 };

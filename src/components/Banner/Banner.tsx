@@ -243,11 +243,11 @@ export default function HeroSectionFramer() {
               <motion.div
                 className="relative hidden lg:block"
                 initial={{ opacity: 0, scale: 0.6, rotateY: 45 }}
-                animate={{ opacity: 1, scale: 1.7, rotateY: 0 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
                 // variants={illustrationFloatVariants as any}
               >
-                <div className="relative w-full max-w-lg mx-auto">
+                <div className="relative w-full mt-24 max-w-lg mx-auto">
                   {/* 3D Blue Geometric Shape */}
                   <div className="relative flex items-center justify-center">
                     <FloatingOrbsBackground />
@@ -257,15 +257,15 @@ export default function HeroSectionFramer() {
                       <Logo />
 
                       {/* Accent elements */}
-                      <div className="absolute top-8 right-8 w-6 h-6 bg-blue-400 rounded-full shadow-lg" />
-                      <div className="absolute bottom-24 left-12 w-4 h-16 bg-blue-700/20 rounded-full backdrop-blur-sm" />
-                      <div className="absolute top-1/2 left-8 w-2 h-8 bg-white/30 rounded-full backdrop-blur-sm" />
+                      {/* <div className="absolute top-8 right-8 w-6 h-6 bg-blue-400 rounded-full shadow-lg" /> */}
+                      {/* <div className="absolute bottom-24 left-12 w-4 h-16 bg-blue-700/20 rounded-full backdrop-blur-sm" />
+                      <div className="absolute top-1/2 left-8 w-2 h-8 bg-white/30 rounded-full backdrop-blur-sm" /> */}
                     </div>
                   </div>
 
                   {/* Floating particles */}
-                  <div className="absolute -top-4 -right-4 w-3 h-3 bg-blue-400 rounded-full animate-bounce" />
-                  <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                  {/* <div className="absolute -top-4 -right-4 w-3 h-3 bg-blue-400 rounded-full animate-bounce" /> */}
+                  {/* <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" /> */}
                   <div className="absolute top-1/3 right-8 w-4 h-4 bg-blue-400 rounded-full animate-ping" />
                 </div>
               </motion.div>

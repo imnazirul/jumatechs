@@ -2,9 +2,58 @@
 
 import { motion } from "framer-motion";
 
+const GetStartedButton = () => {
+  return (
+    <div className="flex items-center gap-4 w-full">
+      <div
+        className="h-[1px] w-full"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.23) 100%)",
+        }}
+      ></div>
+      <div>
+        <motion.div
+          className=" max-w-52 min-w-52 h-15 p-[1px] rounded-2xl md:rounded-4xl cursor-pointer transition-all duration-1000 "
+          style={{
+            background: `conic-gradient(from var(--border-angle, 0deg), rgba(0, 45, 247, 0.00) 0%, #1E1242 10%, #FFFFFF1a 10%, #FFF 100%)`,
+          }}
+          animate={{
+            "--border-angle": "360deg",
+          }}
+          transition={{
+            duration: 5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
+          // whileHover={{
+          //   scale: 1.03,
+          // }}
+        >
+          <div
+            style={{}}
+            className="overflow-hidden rounded-4xl hover:bg-blue-700 transition-all  flex items-center justify-center bg-[#1C59FF]  h-full border-neutral-800 "
+          >
+            <p className="text-center text-white text-lg font-semibold">
+              Get Started
+            </p>
+          </div>
+        </motion.div>
+      </div>
+      <div
+        className="h-[1px] w-full"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(255, 255, 255, 0.23) 0%, rgba(255, 255, 255, 0.00) 100%)",
+        }}
+      ></div>
+    </div>
+  );
+};
+
 export default function OfferAndGetStarted() {
   return (
-    <div className=" flex items-center justify-center py-7 p-4">
+    <div className=" flex flex-col gap-12 items-center justify-center py-12 p-4">
       <style jsx>{`
         @keyframes rotateMove {
           0% {
@@ -153,6 +202,7 @@ export default function OfferAndGetStarted() {
           </div>
         </div>
       </motion.div>
+      <GetStartedButton />
     </div>
   );
 }
